@@ -1,0 +1,36 @@
+<div style="display: flex; justify-content: space-around; padding: 20px; background-color: darkblue; border-radius: 10px;">
+  <a href="tel:+1XXXXXXXXXX" style="display: block; width: 30%; padding: 15px; background-color: #4CAF50; color: white; text-align: center; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    Call Us
+  </a>
+  <a href="https://bcrw.apple.com/urn:biz:YOUR_BUSINESS_ID" style="display: block; width: 30%; padding: 15px; background-color: #007AFF; color: white; text-align: center; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    Message Us
+  </a>
+  <button onclick="sendWebhook()" style="width: 30%; padding: 15px; background-color: #008CBA; color: white; text-align: center; border-radius: 5px; border: none; font-weight: bold; font-size: 16px; cursor: pointer;">
+    Send Data
+  </button>
+</div>
+
+<script>
+  function sendWebhook() {
+    fetch('YOUR_WEBHOOK_URL', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        /* Add any data you want to send in the webhook */
+        action: 'mobile_button_tap',
+        timestamp: new Date().toISOString()
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Webhook response:', data);
+      alert('Data sent successfully!');
+    })
+    .catch((error) => {
+      console.error('Error sending webhook:', error);
+      alert('Failed to send data.');
+    });
+  }
+</script>
