@@ -1,39 +1,42 @@
-<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; width: 100vw; margin: 0; background-color: #11172b;">
-  <div style="margin-bottom: 30px;">
-    <img src="https://raw.githubusercontent.com/meady35/AOD/refs/heads/main/Delta_Air_Lines___Flights___Plane_Tickets___Hotels___Cars.jpg" alt="Your Logo" style="max-width: 300px; height: auto;">
-  </div>
-  <a href="tel:+1XXXXXXXXXX" style="display: block; width: 95%; max-width: 500px; padding: 30px 20px; margin-bottom: 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 24px;">
-    Tab to contact to Specialist
-  </a>
-  <a href="https://bcrw.apple.com/urn:biz:a1069ced-8b1b-48ba-ba07-3fa494e7ab9b" style="display: block; width: 95%; max-width: 500px; padding: 30px 20px; margin-bottom: 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 24px;">
-    Message Us with Apple Messages for Business
-  </a>
-  <button onclick="sendWebhook()" style="width: 95%; max-width: 500px; padding: 30px 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; border: none; font-weight: bold; font-size: 26px; cursor: pointer;">
-    Start Meeting
-  </button>
-</div>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; width: 100vw; margin: 0; background-color: #11172b;">
+          <div style="margin-bottom: 35px;">
+            <img src="https://raw.githubusercontent.com/meady35/AOD/refs/heads/main/Delta_Air_Lines___Flights___Plane_Tickets___Hotels___Cars.jpg" alt="Your Logo" style="max-width: 350px; height: auto;">
+          </div>
+          <a href="tel:+1XXXXXXXXXX" style="display: block; width: 95%; max-width: 500px; padding: 30px 20px; margin-bottom: 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 24px;">
+            Tab to contact to Specialist
+          </a>
+          <a href="https://bcrw.apple.com/urn:biz:a1069ced-8b1b-48ba-ba07-3fa494e7ab9b" style="display: block; width: 95%; max-width: 500px; padding: 30px 20px; margin-bottom: 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 24px;">
+            Message Us with Apple Messages for Business
+          </a>
+          <button onclick="sendWebhook()" style="width: 95%; max-width: 500px; padding: 30px 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; border: none; font-weight: bold; font-size: 26px; cursor: pointer;">
+            Start Meeting
+          </button>
+        </div>
 
-<script>
-  function sendWebhook() {
-    fetch('YOUR_WEBHOOK_URL', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        /* Add any data you want to send in the webhook */
-        action: 'mobile_button_tap',
-        timestamp: new Date().toISOString()
-      }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Webhook response:', data);
-      alert('Data sent successfully!');
-    })
-    .catch((error) => {
-      console.error('Error sending webhook:', error);
-      alert('Failed to send data.');
-    });
-  }
-</script>
+        <script>
+          function sendWebhook() {
+            fetch('YOUR_WEBHOOK_URL', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                /* Add any data you want to send in the webhook */
+                action: 'mobile_button_tap',
+                timestamp: new Date().toISOString()
+              }),
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Webhook response:', data);
+              alert('Data sent successfully!');
+            })
+            .catch((error) => {
+              console.error('Error sending webhook:', error);
+              alert('Failed to send data.');
+            });
+          }
+        </script>
+        ```
+
+I've increased the `max-width` of the logo from `300px` to `350px` and adjusted the `margin-bottom` above it to `35px` to provide better balance. Is there anything else you'd like to adjust?
