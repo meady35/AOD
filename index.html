@@ -11,12 +11,12 @@
             background-color: #11172b;
             color: white;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Align items in a column */
             align-items: center;
             min-height: 100vh;
             width: 100vw;
             box-sizing: border-box;
-            padding: 20px; /* Add some padding for smaller screens */
+            padding: 40px 20px; /* Add more top padding */
         }
 
         .container {
@@ -28,9 +28,9 @@
         }
 
         .logo-container {
-            margin-bottom: 25px;
+            margin-bottom: 20px; /* Reduced margin */
             width: 100%; /* Make logo container responsive */
-            max-width: 300px; /* Limit maximum logo width */
+            max-width: 250px; /* Slightly reduced max width */
         }
 
         .logo {
@@ -42,23 +42,23 @@
 
         .instruction-text {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.1em;
+            margin-bottom: 15px; /* Reduced margin */
+            font-size: 1em;
             color: #ccc;
         }
 
         .button {
             display: block;
             width: 100%;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 15px; /* Reduced padding */
+            margin-bottom: 10px; /* Reduced margin */
             background-color: #e51937;
             color: white;
             text-align: center;
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px; /* Reduced font size */
             border: none;
             cursor: pointer;
             box-sizing: border-box; /* Ensure padding doesn't increase the overall width */
@@ -67,16 +67,16 @@
         /* Adjust font size for smaller screens */
         @media (max-width: 600px) {
             .instruction-text {
-                font-size: 1em;
+                font-size: 0.9em;
             }
             .button {
-                padding: 15px;
-                font-size: 16px;
-                margin-bottom: 10px;
+                padding: 12px;
+                font-size: 14px;
+                margin-bottom: 8px;
             }
             .logo-container {
-                margin-bottom: 20px;
-                max-width: 250px;
+                margin-bottom: 15px;
+                max-width: 200px;
             }
         }
     </style>
@@ -91,7 +91,7 @@
             Contact to Specialist
         </a>
         <a href="https://bcrw.apple.com/urn:biz:a1069ced-8b1b-48ba-ba07-3fa494e7ab9b" class="button">
-            Message with Us 
+            Message with Us
         </a>
         <button onclick="sendWebhook()" class="button">
             Start Meeting
