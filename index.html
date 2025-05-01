@@ -1,41 +1,126 @@
-<div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; min-height: 100vh; width: 100vw; margin: 0; background-color: #11172b; padding: 40px 20px;">
-  <div style="margin-bottom: 35px; width: 100%; max-width: 400px;">
-    <img src="https://raw.githubusercontent.com/meady35/AOD/refs/heads/main/Delta_Air_Lines___Flights___Plane_Tickets___Hotels___Cars.jpg" alt="Your Logo" style="display: block; width: 100%; height: auto; margin: 0 auto;">
-  </div>
-  <div style="width: 100%; max-width: 500px;">
-    <a href="tel:+17705208699" style="display: block; width: 100%; padding: 30px 20px; margin-bottom: 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 24px;">
-      Tab to contact to Specialist
-    </a>
-    <a href="https://bcrw.apple.com/urn:biz:a1069ced-8b1b-48ba-ba07-3fa494e7ab9b" style="display: block; width: 100%; padding: 30px 20px; margin-bottom: 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 24px;">
-      Message Us with Apple Messages
-    </a>
-    <button onclick="sendWebhook()" style="width: 100%; padding: 30px 20px; background-color: #e51937; color: white; text-align: center; border-radius: 12px; border: none; font-weight: bold; font-size: 24px; cursor: pointer;">
-      Start Meeting with Specialist 
-    </button>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Options</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #11172b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            padding: 20px; /* Add some padding for smaller screens */
+        }
 
-<script>
-  function sendWebhook() {
-    fetch('YOUR_WEBHOOK_URL', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        /* Add any data you want to send in the webhook */
-        action: 'mobile_button_tap',
-        timestamp: new Date().toISOString()
-      }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Webhook response:', data);
-      alert('Data sent successfully!');
-    })
-    .catch((error) => {
-      console.error('Error sending webhook:', error);
-      alert('Failed to send data.');
-    });
-  }
-</script>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 95%; /* Make container responsive */
+            max-width: 500px; /* Limit maximum width */
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
+            width: 100%; /* Make logo container responsive */
+            max-width: 300px; /* Limit maximum logo width */
+        }
+
+        .logo {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .instruction-text {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #ccc;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: #e51937;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            box-sizing: border-box; /* Ensure padding doesn't increase the overall width */
+        }
+
+        /* Adjust font size for smaller screens */
+        @media (max-width: 600px) {
+            .instruction-text {
+                font-size: 1em;
+            }
+            .button {
+                padding: 15px;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .logo-container {
+                margin-bottom: 20px;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/meady35/AOD/refs/heads/main/Delta_Air_Lines___Flights___Plane_Tickets___Hotels___Cars.jpg" alt="Your Logo" class="logo">
+        </div>
+        <p class="instruction-text">Please select your preference of communication channel</p>
+        <a href="tel:+1XXXXXXXXXX" class="button">
+            Tab to contact to Specialist
+        </a>
+        <a href="https://bcrw.apple.com/urn:biz:a1069ced-8b1b-48ba-ba07-3fa494e7ab9b" class="button">
+            Message Us with Apple Messages for Business
+        </a>
+        <button onclick="sendWebhook()" class="button">
+            Start Meeting
+        </button>
+    </div>
+
+    <script>
+        function sendWebhook() {
+            fetch('YOUR_WEBHOOK_URL', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    /* Add any data you want to send in the webhook */
+                    action: 'mobile_button_tap',
+                    timestamp: new Date().toISOString()
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Webhook response:', data);
+                alert('Data sent successfully!');
+            })
+            .catch((error) => {
+                console.error('Error sending webhook:', error);
+                alert('Failed to send data.');
+            });
+        }
+    </script>
+</body>
+</html>
