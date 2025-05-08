@@ -93,35 +93,10 @@
          <a href="https://bcrw.apple.com/urn:biz:957ea80f-ecde-4cc6-9683-b5181318eb19" class="button">
              Message with a Specialist
          </a>
-         <button onclick="sendWebhook()" class="button">
-             Video with a Specialist
-         </button>
+         <a href="https://www.cisco.com" class="button">Video with a Specialist</a>
      </div>
  
-     <script>
-         function sendWebhook() {
-             fetch('YOUR_WEBHOOK_URL', {
-                 method: 'POST',
-                 headers: {
-                     'Content-Type': 'application/json',
-                 },
-                 body: JSON.stringify({
-                     /* Add any data you want to send in the webhook */
-                     action: 'mobile_button_tap',
-                     timestamp: new Date().toISOString()
-                 }),
-             })
-             .then(response => response.json())
-             .then(data => {
-                 console.log('Webhook response:', data);
-                 alert('Data sent successfully!');
-             })
-             .catch((error) => {
-                 console.error('Error sending webhook:', error);
-                 alert('Failed to send data.');
-             });
-         }
-     </script>
+     
  </body>
  </body>
  </html>
