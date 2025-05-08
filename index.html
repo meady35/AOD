@@ -1,127 +1,130 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Communication Options</title>
-     <style>
-         body {
-             margin: 0;
-             font-family: sans-serif;
-             background-color: #11172b;
-             color: white;
-             display: flex;
-             flex-direction: column; /* Align items in a column */
-             align-items: center;
-             min-height: 100vh;
-             width: 100vw;
-             box-sizing: border-box;
-             padding: 40px 20px; /* Add more top padding */
-         }
- 
-         .container {
-             display: flex;
-             flex-direction: column;
-             align-items: center;
-             width: 95%; /* Make container responsive */
-             max-width: 500px; /* Limit maximum width */
-         }
- 
-         .logo-container {
-             margin-bottom: 20px; /* Reduced margin */
-             width: 100%; /* Make logo container responsive */
-             max-width: 250px; /* Slightly reduced max width */
-         }
- 
-         .logo {
-             display: block;
-             width: 100%;
-             height: auto;
-             margin: 0 auto;
-         }
- 
-         .instruction-text {
-             text-align: center;
-             margin-bottom: 15px; /* Reduced margin */
-             font-size: 1em;
-             color: #ccc;
-         }
- 
-         .button {
-             display: block;
-             width: 100%;
-             padding: 15px; /* Reduced padding */
-             margin-bottom: 10px; /* Reduced margin */
-             background-color: #e51937;
-             color: white;
-             text-align: center;
-             border-radius: 10px;
-             text-decoration: none;
-             font-weight: bold;
-             font-size: 16px; /* Reduced font size */
-             border: none;
-             cursor: pointer;
-             box-sizing: border-box; /* Ensure padding doesn't increase the overall width */
-         }
- 
-         /* Adjust font size for smaller screens */
-         @media (max-width: 600px) {
-             .instruction-text {
-                 font-size: 0.9em;
-             }
-             .button {
-                 padding: 12px;
-                 font-size: 14px;
-                 margin-bottom: 8px;
-             }
-             .logo-container {
-                 margin-bottom: 15px;
-                 max-width: 200px;
-             }
-         }
-     </style>
- </head>
- <body>
-     <div class="container">
-         <div class="logo-container">
-             <img src="https://raw.githubusercontent.com/meady35/AOD/refs/heads/main/Delta_Air_Lines___Flights___Plane_Tickets___Hotels___Cars.jpg" alt="Your Logo" class="logo">
-         </div>
-         <p class="instruction-text">Please select your preference of communication channel</p>
-         <a href="tel:+14046784635" class="button">
-             Talk to a Specialist
-         </a>
-         <a href="https://bcrw.apple.com/urn:biz:957ea80f-ecde-4cc6-9683-b5181318eb19" class="button">
-             Message with a Specialist
-         </a>
-         <button onclick="sendWebhook()" class="button">
-             Video with a Specialist
-         </button>
-     </div>
- 
-     <script>
-         function sendWebhook() {
-             fetch('YOUR_WEBHOOK_URL', {
-                 method: 'POST',
-                 headers: {
-                     'Content-Type': 'application/json',
-                 },
-                 body: JSON.stringify({
-                     /* Add any data you want to send in the webhook */
-                     action: 'mobile_button_tap',
-                     timestamp: new Date().toISOString()
-                 }),
-             })
-             .then(response => response.json())
-             .then(data => {
-                 console.log('Webhook response:', data);
-                 alert('Data sent successfully!');
-             })
-             .catch((error) => {
-                 console.error('Error sending webhook:', error);
-                 alert('Failed to send data.');
-             });
-         }
-     </script>
- </body>
- </body>
- </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Options</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+            display: flex;
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            min-height: 100vh; /* Ensure full viewport height */
+            margin: 0;
+            box-sizing: border-box; /* Ensure padding doesn't increase the overall width */
+            padding-top: 30px; /* Add more top padding */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 95%; /* Make container responsive */
+            max-width: 600px; /* Limit maximum width */
+            padding: 20px; /* Add some padding around the content */
+            background-color: #fff; /* White background for the container */
+            border-radius: 8px; /* Rounded corners for the container */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px; /* Reduced margin */
+            padding: 15px; /* Slightly reduced padding */
+            background-color: #eee; /* Light grey background for the logo area */
+            border-radius: 6px;
+        }
+
+        .instruction-text {
+            text-align: center;
+            margin-bottom: 15px; /* Reduced margin */
+            color: #555;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px; /* Reduced padding */
+            margin-bottom: 10px; /* Reduced margin */
+            background-color: #007bff; /* Blue button color */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px; /* Reduced font size */
+            text-align: center;
+            box-sizing: border-box; /* Ensure padding doesn't increase the overall width */
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Adjust font size for smaller screens */
+        @media (max-width: 600px) {
+            .instruction-text {
+                font-size: 14px;
+            }
+            .button {
+                font-size: 14px;
+                padding: 12px;
+                margin-bottom: 8px;
+            }
+            .logo-container {
+                margin-bottom: 15px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/mready95/AOO/refu/heads/main/Delta_Air_Lines_Fly_Delta_App.png" alt="Delta Logo" style="max-width: 100%; height: auto;">
+        </div>
+        <p class="instruction-text">Please select your preference of communication channel to connect with a Specialist</p>
+        <a href="#" class="button">Chat with a Specialist</a>
+        <a href="tel:18001234567" class="button">Call a Specialist</a>
+        <a href="YOUR_URL_HERE" class="button">Go to a Website</a>
+
+        <button onclick="sendWebhook()" class="button">Send Webhook</button>
+    </div>
+
+    <script>
+        function sendWebhook() {
+            const webhookUrl = 'YOUR_WEBHOOK_URL'; // Replace with your actual webhook URL
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: 'mobile_button_tap',
+                    button_label: 'Send Webhook (Clicked in the Webhook)',
+                    timestamp: new Date().toISOString()
+                }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errData => {
+                        throw new Error(`Webhook request failed: ${response.status} - ${JSON.stringify(errData)}`);
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('Webhook sent successfully!');
+                console.log('Webhook response:', data);
+            })
+            .catch(error => {
+                console.error('Error sending webhook:', error);
+                alert('Failed to send data.');
+            });
+        }
+    </script>
+</body>
+</html>
