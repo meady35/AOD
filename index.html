@@ -45,16 +45,23 @@
             color: #004B91; /* Darker blue text for hover */
             border-color: #004B91; /* Darker blue outline for hover */
         }
+        .bottom-image {
+            max-width: 200px; /* Adjust size for mobile */
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://raw.githubusercontent.com/meady35/AOD/refs/heads/main/kaiser%20permanente%20logo%20-%20Google%20Search.jpeg.png" alt="Kaiser Permanente Logo" class="logo">
+        <img src="https://via.placeholder.com/150x50?text=Kaiser+Permanente+Logo" alt="Kaiser Permanente Logo" class="logo">
         <h1>Kaiser Permanente</h1>
         <p>Select an option below to trigger the corresponding webhook.</p>
         <button class="option-button" onclick="sendWebhook(1)">Option 1: Schedule Appointment</button>
         <button class="option-button" onclick="sendWebhook(2)">Option 2: Message Doctor</button>
         <button class="option-button" onclick="sendWebhook(3)">Option 3: Refill Prescription</button>
+        <img src="https://via.placeholder.com/200x100?text=Bottom+Image" alt="Bottom Image" class="bottom-image">
     </div>
 
     <script>
